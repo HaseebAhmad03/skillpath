@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillPath – find where your skills fit</title>
+  <meta name="description" content="Take a short quiz on a tech career path, find out if you're a beginner, intermediate or pro, and get a roadmap for what to learn next.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#" id="logo">SkillPath</a>
+  <div id="whoami" class="whoami" hidden>
+    <span id="whoName"></span>
+    <button class="link" id="logout">Not you? Log out</button>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section id="view-home" class="view">
+    <div class="hero">
+      <h1>First year, and no idea which tech job is yours?</h1>
+      <p class="lead">Pick a career path, answer six questions, and see whether you're a beginner, intermediate or pro. Then get a short list of what to learn next.</p>
+      <p class="note">Takes about 5 minutes. Your name and results stay in your own browser, nothing is sent anywhere.</p>
+    </div>
+
+    <form id="loginForm" class="login" hidden>
+      <label for="nameInput">What should we call you?</label>
+      <div class="row">
+        <input id="nameInput" type="text" maxlength="30" placeholder="Your first name" autocomplete="given-name" required>
+        <button class="btn" type="submit">Start</button>
+      </div>
+    </form>
+
+    <div id="pathsWrap" hidden>
+      <h2 id="greeting"></h2>
+      <ol class="trail" id="trail"></ol>
+      <div id="history" class="history" hidden>
+        <h3>Your past results</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="view" hidden>
+    <button class="link" id="quitQuiz">Back to all paths</button>
+    <p class="progress" id="progress"></p>
+    <div class="bar"><div id="barFill"></div></div>
+    <h2 id="question" class="q"></h2>
+    <div id="options" class="options"></div>
+    <div id="feedback" class="feedback" hidden></div>
+    <button class="btn" id="nextBtn" hidden>Next question</button>
+  </section>
+
+  <!-- RESULT -->
+  <section id="view-result" class="view" hidden>
+    <p class="progress" id="resPath"></p>
+    <h2 class="level" id="resLevel"></h2>
+    <p class="lead" id="resText"></p>
+    <h3>Your next steps</h3>
+    <ol class="steps" id="resSteps"></ol>
+    <div class="actions">
+      <button class="btn" id="retake">Retake this quiz</button>
+      <button class="btn ghost" id="otherPath">Try another path</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Built by Haseeb, a CSE student, as a side project. Quiz questions are a rough guide, not an exam.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
